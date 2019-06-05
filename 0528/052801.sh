@@ -1,1 +1,1 @@
-cat /etc/passwd | grep n19010
+grep $USER /etc/passwd
