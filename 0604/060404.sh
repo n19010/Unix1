@@ -1,7 +1,7 @@
 if [ -d "$1" ]; then
     for file in $(find "$1" -maxdepth 1 -type f)
     do
-        if [ -r "${1}/${file}" -a ! -d "${1}/${file}" ]; then
+        if [ ! -r "${file}" -a ! -d "${file}" ]; then
             echo "$file"
         fi
     done
