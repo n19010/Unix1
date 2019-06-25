@@ -1,1 +1,4 @@
-curl $1 | grep -o 'href="[^"]*"' | grep http | sed 's/^href=//' | awk '{print "curl -f",$1,"> /dev/null"}' | tee list | bash -e
+touch wget.log
+wget --spider -o ./wget.log -r $1
+grep -B2 'Not Found' wget.log | grep http
+rm wget.log
